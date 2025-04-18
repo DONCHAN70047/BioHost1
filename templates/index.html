@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kanan Agrotech Pvt Ltd</title>
+<title>Kanan Biotech Pvt Ltd</title>
 <style>
 * {
     box-sizing: border-box;
@@ -15,6 +15,13 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #f1f1f1, #d8f3f3);
     color: #333;
+    cursor: url('//static//MouseCursor.png'), auto;
+
+
+    /*font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f1f1f1, #d8f3f3);
+    color: #333;
+    cursor: url('static\\MouseCursor.png'), auto;  */ /* 🐟 Your custom cursor image */
 }
 
 /* Top Bar Header */
@@ -93,7 +100,7 @@ nav ul.nav-menu {
 
 /* About Section Styling */
 .about-section {
-    padding: 110px 30px 60px;
+    padding: 160px 30px 60px;
     /*background-color: #ddd;*/
     text-align: center;
 }
@@ -182,7 +189,33 @@ nav ul.nav-menu {
     opacity: 1;
     transform: translateX(0);
 }
+/* .................................................View button setting .....................................................*/
+.view-button {
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: right; 
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 27px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 
+.view-button:hover {
+    background-color: #28a745;
+    
+}
+
+
+
+.view-button:focus {
+    outline: none;
+}
+/* .................................................View button setting .....................................................*/
 /* Footer Styling */
 .footer {
     background-color: #28a745;
@@ -234,6 +267,9 @@ main {
     color: black;
     margin-bottom: 30px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .card.visible {
@@ -260,7 +296,27 @@ main {
     .nav-menu {
     flex-wrap: wrap;
     }
+
 }
+.hover-box {
+    background-color: #4caf50;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 200px;
+    margin: 20px auto;
+}
+
+/* This happens when you hover */
+.hover-box:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
 /* .................................For mobile ........................................... */
 </style>
 </head>
@@ -276,10 +332,9 @@ main {
         <nav>
             <ul class="nav-menu">
                 <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
+                <li><a href="{{ url_for('view') }}">Products</a></li>
                 <li><a href="#">Growth</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Welcome</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -311,12 +366,27 @@ main {
 <main>
     <div class="card">
         <h2>About Kanan Biotech Pvt Ltd</h2>
-        <p>At Kanan Biotech, we specialize in providing high-quality fish seeds and aquaculture products that cater to the growing needs of fish farmers and aquaculture professionals. With a focus on sustainability and innovation, our products ensure success and growth in aquaculture ventures. We aim to transform the industry with cutting-edge technology and premium quality seeds.</p>
+        <p>"Kanan BioTech Pvt Ltd is dedicated to revolutionizing the fisheries industry through innovative solutions and sustainable practices."
+
+            "At Kanan BioTech, we combine cutting-edge biotechnology with a passion for aquatic life, ensuring healthier fish populations and improved aquaculture methods."
+            
+            "We specialize in developing advanced medicines for aquatic species, promoting their growth and well-being while safeguarding the ecosystem."
+            
+            "Our research-driven approach in both fisheries and medicinal production empowers farmers and aquaculturists with the tools for success and sustainability."
+            
+            "Kanan BioTech Pvt Ltd is proud to lead the way in transforming the aquaculture sector with scientifically-backed solutions that foster fish health and productivity."</p>
     </div>
-    <div class="card">
-        <h2>Company's Products</h2>
-        <p>Coming soon...</p>
+    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 20px; background-color: #afaeae; border-radius: 10px; box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);">
+        <div>
+            <h2>Company's Products</h2>
+            <p>At Kanan Biotech, we offer a variety of high-quality products designed to support the growth and success of aquaculture businesses. Our range includes premium fish seeds, state-of-the-art aquaculture equipment, and effective water treatment solutions. Each product is crafted to meet the needs of fish farmers, ensuring sustainability, efficiency, and higher yields. Whether you're looking to improve water quality, boost fish growth, or enhance your farming operations, our products are designed to help you achieve the best results.</p>
+        </div>
+        <div style="align-self: flex-end;">
+            <button class="view-button hover-box" onclick="window.location.href='{{ url_for('view') }}'">See more products</button>
+        </div>
     </div>
+    
+    
 </main>
 
 
@@ -326,7 +396,7 @@ main {
 
 
 <!-- ...............................................................Footer section.......................................................... -->
-<footer class="footer">
+<footer class="footer" id="Contact">
     <h3>Thanks for visiting!</h3>
     <p>Stay connected with us for updates and offers</p>
 <div class="social-media">
