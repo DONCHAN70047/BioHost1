@@ -22,7 +22,7 @@
 </head>
 <body class="bg-black text-white font-sans">
 
-  <!-- Navbar -->
+  <!-- ................................................Navbar................................................... -->
   <header class="sticky top-0 bg-black z-50">
     <nav class="flex justify-between items-center p-4 border-b border-gray-700">
       <h1 class="text-2xl font-bold text-green-400">Kanan BioTech</h1>
@@ -36,7 +36,7 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Auto Background Change -->
+  <!-- ...............................................Auto Background Change.................................... -->
   <section id="hero" class="h-screen flex items-center justify-center text-center px-4 bg-cover bg-center relative transition-all duration-1000 ease-in-out">
     <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
     <div class="fade-in relative z-10">
@@ -45,7 +45,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ........................................................About Section...................................... -->
   <section id="about" class="px-6 py-16 fade-in">
     <h2 class="text-3xl font-bold text-green-400 mb-6">About Us</h2>
     <p class="text-gray-300 max-w-3xl">
@@ -53,7 +53,7 @@
     </p>
   </section>
 
-  <!-- Products Section -->
+  <!-- .........................................................Products Section................................... -->
   <section id="products" class="px-6 py-16 fade-in">
     <h2 class="text-3xl font-bold text-green-400 mb-6">Our Products</h2>
     <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
@@ -74,7 +74,7 @@
   </section>
   
 
-  <!-- Growth Section -->
+  <!-- ......................................................Growth Section........................................ -->
   <section id="growth" class="px-6 py-16 fade-in">
     <h2 class="text-3xl font-bold text-green-400 mb-6">Our Growth</h2>
     <p class="text-gray-300 max-w-3xl">
@@ -82,7 +82,7 @@
     </p>
   </section>
 
-  <!-- Team Section -->
+  <!-- .........................................................Team Section.......................................... -->
   <section id="team" class="px-6 py-16 fade-in">
     <h2 class="text-3xl font-bold text-green-400 mb-8">Meet Our Team</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
@@ -102,33 +102,33 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- .....................................................................Contact Section........................................... -->
   <section id="contact" class="px-6 py-16 fade-in">
     <h2 class="text-3xl font-bold text-green-400 mb-6">Contact Us</h2>
     <p class="text-gray-300">Email: info@kananbiotech.com | Phone: +91-8001949805 | Facebook: | Youtube : </p>
   </section>
 
-  <!-- Footer -->
+  <!-- ...................................................Footer..................................................... -->
   <footer class="text-center p-4 border-t border-gray-700 text-sm text-gray-400">
     &copy; 2025 Kanan BioTech Pvt Ltd. All rights reserved. More updates will be coming soon from our team.....
   </footer>
 
-  <!-- JavaScript for Scroll Animation + Background Changer -->
+  <!-- ..................................JavaScript for Animation & Background Change................................................ -->
   <script>
-    // Scroll-based animation
+    // Scroll time
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         } else {
-          entry.target.classList.remove('show'); // Re-enable animation on scroll
+          entry.target.classList.remove('show');
         }
       });
     }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Auto background changer for hero section
+    // Auto background changer pic upload section
     const heroSection = document.getElementById('hero');
     const images = [
         'static//img1.jpg',
